@@ -185,7 +185,10 @@ class MeterApp:
             return
 
         # Create dataframe
-        df = pd.DataFrame(self.results)
+        df = pd.DataFrame(
+            self.results,
+            columns=["Image", "House Number", "Meter Number"]
+        )
 
         # Ask user where to save
         file_path = filedialog.asksaveasfilename(
